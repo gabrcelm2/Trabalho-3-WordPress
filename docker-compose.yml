@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_password
+    restart: always
+
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - wp_content:/var/www/html/wp-content
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: wp_password
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        if (isset($$_SERVER['HTTP_HOST'])) {
+            define('WP_HOME', 'http://' . $$_SERVER['HTTP_HOST']);
+            define('WP_SITEURL', 'http://' . $$_SERVER['HTTP_HOST']);
+        }
+    depends_on:
+      - db
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - wordpress
+    restart: always
+
+  locust:
+    image: grubykarol/locust
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./locust-scripts:/locust
+    environment:
+      - ATTACKED_HOST=http://nginx
+      - LOCUST_FILE=/locust/locustfile.py
+    depends_on:
+      - nginx
+
+volumes:
+  db_data:
+  wp_content:
