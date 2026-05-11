@@ -26,8 +26,6 @@ Foram analisadas três métricas principais:
 | P95 | Tempo máximo observado para 95% das requisições |
 | Taxa de erro | Percentual de requisições com falha |
 
-O critério de aceitação utilizado foi manter a taxa de erro abaixo de **20%**.
-
 ---
 
 ## Arquitetura Utilizada
@@ -35,7 +33,7 @@ O critério de aceitação utilizado foi manter a taxa de erro abaixo de **20%**
 O ambiente foi montado com contêineres Docker.
 
 ```text
-Locust → Nginx → WordPress → MySQL
+Locust → Nginx → WordPress
 ```
 
 | Componente | Responsabilidade |
@@ -83,7 +81,7 @@ Os testes foram separados de acordo com o tipo de conteúdo acessado:
 |---|---|
 | `imagem_1mb` | Acesso a uma imagem com aproximadamente 1 MB |
 | `imagem_300kb` | Acesso a uma imagem com aproximadamente 300 KB |
-| `texto_400kb` | Acesso a uma página/post com texto de aproximadamente 400 KB |
+| `texto_400kb` | Acesso a uma página com texto de aproximadamente 400 KB |
 | `hibrido` | Fluxo misto com imagem 1 MB, texto 400 KB e imagem 300 KB |
 
 O cenário híbrido foi usado para representar uma navegação mais próxima de um uso real, pois mistura conteúdos leves e mais pesados.
