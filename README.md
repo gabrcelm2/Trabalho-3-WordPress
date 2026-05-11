@@ -164,6 +164,12 @@ Os principais arquivos produzidos são:
 
 ## Gráficos Gerados
 
+As imagens dos gráficos gerados durante os testes estão disponíveis na pasta do Google Drive abaixo:
+
+```text
+https://drive.google.com/drive/folders/1qC98bwMhvVscoNyrX00uQ3oOERv1UXbp?usp=sharing
+```
+
 Foram criados gráficos para comparar os resultados por:
 
 - quantidade de usuários;
