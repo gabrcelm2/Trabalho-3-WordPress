@@ -124,12 +124,6 @@ Os testes podem ser executados pelo script:
 ./testes.ps1
 ```
 
-Ou manualmente com o Locust, por exemplo:
-
-```bash
-locust --locustfile locust_scripts/locustfile.py --host http://localhost
-```
-
 Depois disso, o painel do Locust pode ser acessado em:
 
 ```text
