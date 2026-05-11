@@ -1,4 +1,4 @@
-# Define as variáveis da matriz de testes
+# variaveis
 $cenarios = @("imagem_1mb", "texto_400kb", "imagem_300kb", "hibrido")
 
 $cargas = @(
@@ -9,7 +9,6 @@ $cargas = @(
 
 $instancias = @(1, 2, 3)
 
-# Garante que a pasta de resultados existe
 New-Item -ItemType Directory -Force -Path "resultados/finais" | Out-Null
 
 Write-Host "Iniciando bateria de testes..." -ForegroundColor Green
