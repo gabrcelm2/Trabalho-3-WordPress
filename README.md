@@ -43,7 +43,6 @@ Locust → Nginx → WordPress → MySQL
 | Locust | Simular usuários acessando a aplicação |
 | Nginx | Receber as requisições e balancear entre as instâncias |
 | WordPress | Aplicação testada |
-| MySQL | Banco de dados da aplicação |
 
 ---
 
