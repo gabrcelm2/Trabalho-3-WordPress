@@ -194,10 +194,10 @@ graficos/
 
 ## Relatório
 
-O relatório completo com a análise dos gráficos está disponível no repositório:
+O relatório completo com a análise dos gráficos está disponível no PDF enviado no AVA:
 
 ```text
-relatorio_trabalho3_resultados_graficos.pdf
+relatorio_trabalho3
 ```
 
 Nele são discutidos:
