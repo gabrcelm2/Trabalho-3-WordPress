@@ -213,28 +213,9 @@ Nele são discutidos:
 
 ---
 
-## Imagem da Estrutura do Projeto
-
-A imagem abaixo pode ser usada para mostrar a organização dos arquivos no projeto:
-
-```markdown
-![Estrutura do projeto](./imagem_projeto.jpeg)
-```
-
-> Caso o nome da imagem seja diferente no seu repositório, altere o caminho acima para o nome correto do arquivo.
-
----
 
 ## Resumo dos Resultados
 
 De forma geral, os testes mostraram que os cenários com imagens estáticas tiveram melhor estabilidade e menor tempo de resposta. Já os cenários com texto e principalmente o cenário híbrido exigiram mais da aplicação, apresentando aumento no P95 e pequenas taxas de erro em cargas maiores.
 
-Mesmo nos cenários mais pesados, os resultados ficaram dentro do limite definido para o trabalho, mantendo a taxa de erro abaixo de **20%**.
-
----
-
-## Conclusão
-
-O experimento mostrou que o WordPress conseguiu responder às cargas simuladas de forma aceitável no ambiente configurado. A presença do Nginx permitiu distribuir as requisições entre múltiplas instâncias, mas o ganho não foi totalmente linear, pois ainda existem recursos compartilhados, como banco de dados, armazenamento e limitações da máquina local.
-
-Assim, o trabalho demonstra na prática como testes de carga ajudam a identificar gargalos, comparar cenários e avaliar a estabilidade de uma aplicação web em ambiente distribuído.
+Mesmo nos cenários mais pesados, os resultados ficaram dentro do limite definido para o trabalho, mantendo a taxa de erro abaixo de **10%**.
